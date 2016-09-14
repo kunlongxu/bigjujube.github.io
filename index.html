@@ -55,7 +55,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lobster Two, Monda:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -85,11 +85,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Linmo Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Linmo Blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Linmo Blog">
 
 
 
@@ -112,7 +112,7 @@
 
   <link rel="canonical" href="http://yoursite.com/"/>
 
-  <title> Hexo </title>
+  <title> Linmo Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -145,11 +145,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">Linmo Blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">More time for js</p>
+  <p class="site-subtitle">More time for JS</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -223,6 +223,137 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/14/set-sublime-brower-for-chrome/" itemprop="url">
+                  为sublime设置快捷键打开浏览器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-14T18:32:04+08:00" content="2016-09-14">
+              2016-09-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/sublime/" itemprop="url" rel="index">
+                    <span itemprop="name">sublime</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/14/set-sublime-brower-for-chrome/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/14/set-sublime-brower-for-chrome/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>注意此方法需要SideBarEnhancements插件配合,这里是用的mac下的设置</em></p>
+<ul>
+<li>然后通过ctrl + k, ctrl + b打开侧边栏，在侧边栏的文件中右击，找到 open width -&gt; edit applications<br>然后在这里边设置firefox打开的方式。<br>application : 路径要修改为自己默认安装的路径。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;</div><div class="line">    &quot;caption&quot;: &quot;Chrome&quot;,</div><div class="line">    &quot;id&quot;: &quot;side-bar-files-open-with-chrome&quot;,</div><div class="line"></div><div class="line">    &quot;command&quot;: &quot;side_bar_files_open_with&quot;,</div><div class="line">    &quot;args&quot;: &#123;</div><div class="line">                        &quot;paths&quot;: [],</div><div class="line">                        &quot;application&quot;: &quot;/Applications/Google Chrome.app&quot;,</div><div class="line">                        &quot;extensions&quot;:&quot;.*&quot;, //any file with extension</div><div class="line">                        &quot;args&quot;:[]</div><div class="line">            &#125;,</div><div class="line">    &quot;open_automatically&quot; : false // will close the view/tab and launch the application</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>然后在Key-Bindings-User里设置一下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[   </div><div class="line">    &#123; &quot;keys&quot;: [&quot;f12&quot;], &quot;command&quot;: &quot;open_in_browser&quot;&#125;,</div><div class="line">    &#123; &quot;keys&quot;: [&quot;alt+s&quot;], &quot;command&quot;: &quot;side_bar_files_open_with&quot;,</div><div class="line">                &quot;args&quot;: &#123;</div><div class="line">                    &quot;paths&quot;: [],</div><div class="line">                    &quot;application&quot;: &quot;/Applications/Google Chrome.app&quot;,</div><div class="line">                    &quot;extensions&quot;:&quot;.*&quot; //any file with extension</div><div class="line">                &#125; </div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<ul>
+<li>这里我设置的是alt+s打开chrome浏览器</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -323,7 +454,28 @@
 <p>回调函数就是一个通过函数指针调用的函数。如果你把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用为调用它所指向的函数时，我们就说这是回调函数。回调函数不是由该函数的实现方直接调用，而是在特定的事件或条件发生时由另外的一方调用的，用于对该事件或条件进行响应。</p>
 </blockquote>
 </li>
+<li><p>因此callback不一定用于异步，一般同步阻塞的场景下也经常用到回调，比如要求执行某些操作后执行回调函数。</p>
+</li>
 </ul>
+<h3 id="同步阻塞的回调"><a href="#同步阻塞的回调" class="headerlink" title="同步阻塞的回调"></a>同步阻塞的回调</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var func1 = function(callback) &#123;</div><div class="line">//do something.</div><div class="line">(callback &amp;&amp; typeof(callback) === &quot;function&quot;) &amp;&amp; callback();</div><div class="line">&#125;</div><div class="line"></div><div class="line">func1(func2);</div><div class="line">var func2 = function() &#123;&#125;</div></pre></td></tr></table></figure>
+<h3 id="异步回调的例子："><a href="#异步回调的例子：" class="headerlink" title="异步回调的例子："></a>异步回调的例子：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$(document).ready(callback);</div><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">    url: &quot;test.html&quot;,</div><div class="line">    context: document.body</div><div class="line">&#125;).done(function() &#123;</div><div class="line">    $(this).addClass(&quot;done&quot;);</div><div class="line">&#125;).fail(function() &#123;</div><div class="line">    alert(&quot;error&quot;);</div><div class="line">&#125;).always(function() &#123;</div><div class="line">    alert(&quot;complete&quot;);</div><div class="line">&#125;);</div><div class="line">/**</div><div class="line">注意的是，ajax请求确实是异步的,不过这请求是由浏览器新开一个线程请求,当请求的状态变更时,如果先前已设置回调,这异步线程就产生状态变更事件放到 JavaScript引擎的处理队列中等待处理。见：http://www.phpv.net/html/1700.html</div><div class="line">*/</div></pre></td></tr></table></figure>
+<h3 id="回调什么时候执行"><a href="#回调什么时候执行" class="headerlink" title="回调什么时候执行"></a>回调什么时候执行</h3><ul>
+<li>回调函数，一般在同步情境下是最后执行的，而在异步情境下有可能不执行，因为事件没有被触发或者条件不满足。</li>
+</ul>
+<h3 id="回调函数的使用场合"><a href="#回调函数的使用场合" class="headerlink" title="回调函数的使用场合"></a>回调函数的使用场合</h3><ul>
+<li>资源加载：动态加载js文件后执行回调，加载iframe后执行回调，ajax操作回调，图片加载完成执行回调，AJAX等等。</li>
+<li>DOM事件及Node.js事件基于回调机制(Node.js回调可能会出现多层回调嵌套的问题)。</li>
+<li>setTimeout的延迟时间为0，这个hack经常被用到，settimeout调用的函数其实就是一个callback的体现</li>
+<li>链式调用：链式调用的时候，在赋值器(setter)方法中(或者本身没有返回值的方法中)很容易实现链式调用，而取值器(getter)相对来说不好实现链式调用，因为你需要取值器返回你需要的数据而不是this指针，如果要实现链式方法，可以用回调函数来实现</li>
+<li>setTimeout、setInterval的函数调用得到其返回值。由于两个函数都是异步的，即：他们的调用时序和程序的主流程是相对独立的，所以没有办法在主体里面等待它们的返回值，它们被打开的时候程序也不会停下来等待，否则也就失去了setTimeout及setInterval的意义了，所以用return已经没有意义，只能使用callback。callback的意义在于将timer执行的结果通知给代理函数进行及时处理。</li>
+</ul>
+<h3 id="回调函数的传递"><a href="#回调函数的传递" class="headerlink" title="回调函数的传递"></a>回调函数的传递</h3><ul>
+<li>上面说了，要将函数引用或者函数表达式作为参数传递。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$.get(&apos;myhtmlpage.html&apos;, myCallBack); //这是对的</div><div class="line">$.get(&apos;myhtmlpage.html&apos;, myCallBack(&apos;foo&apos;, &apos;bar&apos;)); //这是错的，那么要带参数呢？</div><div class="line">$.get(&apos;myhtmlpage.html&apos;, function() &#123; //带参数的使用函数表达式</div><div class="line">    myCallBack(&apos;foo&apos;, &apos;bar&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>另外，最好保证回调存在且必须是函数引用或者函数表达式：(callback &amp;&amp; typeof(callback) === “function”) &amp;&amp; callback();</p>
+</blockquote>
 
           
         
@@ -502,7 +654,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -510,7 +662,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -519,7 +671,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
