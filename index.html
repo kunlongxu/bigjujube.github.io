@@ -337,20 +337,16 @@
       
         
           
-            <p><em>注意此方法需要SideBarEnhancements插件配合,这里是用的mac下的设置</em></p>
-<ul>
-<li>然后通过ctrl + k, ctrl + b打开侧边栏，在侧边栏的文件中右击，找到 open width -&gt; edit applications<br>然后在这里边设置firefox打开的方式。<br>application : 路径要修改为自己默认安装的路径。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;</div><div class="line">    <span class="string">"caption"</span>: <span class="string">"Chrome"</span>,</div><div class="line">    <span class="string">"id"</span>: <span class="string">"side-bar-files-open-with-chrome"</span>,</div><div class="line"></div><div class="line">    <span class="string">"command"</span>: <span class="string">"side_bar_files_open_with"</span>,</div><div class="line">    <span class="string">"args"</span>: &#123;</div><div class="line">                        <span class="string">"paths"</span>: [],</div><div class="line">                        <span class="string">"application"</span>: <span class="string">"/Applications/Google Chrome.app"</span>,</div><div class="line">                        <span class="string">"extensions"</span>:<span class="string">".*"</span>, <span class="comment">//any file with extension</span></div><div class="line">                        <span class="string">"args"</span>:[]</div><div class="line">            &#125;,</div><div class="line">    <span class="string">"open_automatically"</span> : <span class="literal">false</span> <span class="comment">// will close the view/tab and launch the application</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>然后在Key-Bindings-User里设置一下</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[   </div><div class="line">    &#123; <span class="string">"keys"</span>: [<span class="string">"f12"</span>], <span class="string">"command"</span>: <span class="string">"open_in_browser"</span>&#125;,</div><div class="line">    &#123; <span class="string">"keys"</span>: [<span class="string">"alt+s"</span>], <span class="string">"command"</span>: <span class="string">"side_bar_files_open_with"</span>,</div><div class="line">                <span class="string">"args"</span>: &#123;</div><div class="line">                    <span class="string">"paths"</span>: [],</div><div class="line">                    <span class="string">"application"</span>: <span class="string">"/Applications/Google Chrome.app"</span>,</div><div class="line">                    <span class="string">"extensions"</span>:<span class="string">".*"</span> <span class="comment">//any file with extension</span></div><div class="line">                &#125; </div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<ul>
-<li>这里我设置的是alt+s打开chrome浏览器</li>
-</ul>
+          注意此方法需要SideBarEnhancements插件配合,这里是用的mac下的设置
 
-          
+然后通过ctrl + k, ctrl + b打开侧边栏，在侧边栏的文件中右击，找到 open width -&gt; edit applications然后在这里边设置firefox打开的方式。applicat
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/14/set-sublime-brower-for-chrome/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -468,38 +464,18 @@
       
         
           
-            <h2 id="什么是回调函数"><a href="#什么是回调函数" class="headerlink" title="什么是回调函数"></a>什么是回调函数</h2><p>最近在看nodejs,其中的用了大量的回调函数,以前学js时用ajax,用setTimeout觉得就是用了<br>回调函数,但是为什么,自己也不是太明白,不过今天再看到nodejs时,感觉有必要补一下以前的坑</p>
-<ul>
-<li><p>其中维基百科中的回调是这么写的</p>
-<blockquote>
-<p>In computer programming, a callback is a reference to a piece of executable code that is passed as an argument to other code.</p>
-<p>回调函数就是一个通过函数指针调用的函数。如果你把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用为调用它所指向的函数时，我们就说这是回调函数。回调函数不是由该函数的实现方直接调用，而是在特定的事件或条件发生时由另外的一方调用的，用于对该事件或条件进行响应。</p>
-</blockquote>
-</li>
-<li><p>因此callback不一定用于异步，一般同步阻塞的场景下也经常用到回调，比如要求执行某些操作后执行回调函数。</p>
-</li>
-</ul>
-<h3 id="同步阻塞的回调"><a href="#同步阻塞的回调" class="headerlink" title="同步阻塞的回调"></a>同步阻塞的回调</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> func1 = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</div><div class="line"><span class="comment">//do something.</span></div><div class="line">(callback &amp;&amp; <span class="keyword">typeof</span>(callback) === <span class="string">"function"</span>) &amp;&amp; callback();</div><div class="line">&#125;</div><div class="line"></div><div class="line">func1(func2);</div><div class="line"><span class="keyword">var</span> func2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div></pre></td></tr></table></figure>
-<h3 id="异步回调的例子："><a href="#异步回调的例子：" class="headerlink" title="异步回调的例子："></a>异步回调的例子：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(callback);</div><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">    url: <span class="string">"test.html"</span>,</div><div class="line">    context: <span class="built_in">document</span>.body</div><div class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).addClass(<span class="string">"done"</span>);</div><div class="line">&#125;).fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"error"</span>);</div><div class="line">&#125;).always(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"complete"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">/**</span></div><div class="line">注意的是，ajax请求确实是异步的,不过这请求是由浏览器新开一个线程请求,当请求的状态变更时,如果先前已设置回调,这异步线程就产生状态变更事件放到 JavaScript引擎的处理队列中等待处理。见：http://www.phpv.net/html/1700.html</div><div class="line">*/</div></pre></td></tr></table></figure>
-<h3 id="回调什么时候执行"><a href="#回调什么时候执行" class="headerlink" title="回调什么时候执行"></a>回调什么时候执行</h3><ul>
-<li>回调函数，一般在同步情境下是最后执行的，而在异步情境下有可能不执行，因为事件没有被触发或者条件不满足。</li>
-</ul>
-<h3 id="回调函数的使用场合"><a href="#回调函数的使用场合" class="headerlink" title="回调函数的使用场合"></a>回调函数的使用场合</h3><ul>
-<li>资源加载：动态加载js文件后执行回调，加载iframe后执行回调，ajax操作回调，图片加载完成执行回调，AJAX等等。</li>
-<li>DOM事件及Node.js事件基于回调机制(Node.js回调可能会出现多层回调嵌套的问题)。</li>
-<li>setTimeout的延迟时间为0，这个hack经常被用到，settimeout调用的函数其实就是一个callback的体现</li>
-<li>链式调用：链式调用的时候，在赋值器(setter)方法中(或者本身没有返回值的方法中)很容易实现链式调用，而取值器(getter)相对来说不好实现链式调用，因为你需要取值器返回你需要的数据而不是this指针，如果要实现链式方法，可以用回调函数来实现</li>
-<li>setTimeout、setInterval的函数调用得到其返回值。由于两个函数都是异步的，即：他们的调用时序和程序的主流程是相对独立的，所以没有办法在主体里面等待它们的返回值，它们被打开的时候程序也不会停下来等待，否则也就失去了setTimeout及setInterval的意义了，所以用return已经没有意义，只能使用callback。callback的意义在于将timer执行的结果通知给代理函数进行及时处理。</li>
-</ul>
-<h3 id="回调函数的传递"><a href="#回调函数的传递" class="headerlink" title="回调函数的传递"></a>回调函数的传递</h3><ul>
-<li>上面说了，要将函数引用或者函数表达式作为参数传递。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$.get(<span class="string">'myhtmlpage.html'</span>, myCallBack); <span class="comment">//这是对的</span></div><div class="line">$.get(<span class="string">'myhtmlpage.html'</span>, myCallBack(<span class="string">'foo'</span>, <span class="string">'bar'</span>)); <span class="comment">//这是错的，那么要带参数呢？</span></div><div class="line">$.get(<span class="string">'myhtmlpage.html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//带参数的使用函数表达式</span></div><div class="line">    myCallBack(<span class="string">'foo'</span>, <span class="string">'bar'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>另外，最好保证回调存在且必须是函数引用或者函数表达式：(callback &amp;&amp; typeof(callback) === “function”) &amp;&amp; callback();</p>
-</blockquote>
+          什么是回调函数最近在看nodejs,其中的用了大量的回调函数,以前学js时用ajax,用setTimeout觉得就是用了回调函数,但是为什么,自己也不是太明白,不过今天再看到nodejs时,感觉有必要补一下以前的坑
 
-          
+其中维基百科中的回调是这么写的
+
+In computer programming,
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/14/关于JS中的回调函数和异步的理解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -598,17 +574,14 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="快速启动"><a href="#快速启动" class="headerlink" title="快速启动"></a>快速启动</h2><h3 id="创建一个新文章"><a href="#创建一个新文章" class="headerlink" title="创建一个新文章"></a>创建一个新文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="运行hexo"><a href="#运行hexo" class="headerlink" title="运行hexo"></a>运行hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="创建静态页面"><a href="#创建静态页面" class="headerlink" title="创建静态页面"></a>创建静态页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="发布到站点"><a href="#发布到站点" class="headerlink" title="发布到站点"></a>发布到站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/14/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
