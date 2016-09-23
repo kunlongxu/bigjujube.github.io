@@ -105,12 +105,10 @@ Workspace :工作区
 
 Index/Stage: 暂存区
 Repository: 本地仓库区
-Remote: 远程仓库
+Remote: 远程仓库在我把以下命令都一个个的实践之后，踩了不少的坑但是对上面这张图又有了新的认识所以我把这张图添加了一点东西，自己画了出来，字写的不好见谅
 
-新建代码库
-# 在当前目录新建一个Git代码库
-# 同时这个命令会在本在文件夹新建一个.git文件夹，这个就是git用来管理这个仓库的版本的
-$ git">
+
+我的理解是：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git命令的使用">
 <meta property="og:url" content="http://yoursite.com/2016/09/23/git命令的使用/index.html">
@@ -124,14 +122,13 @@ Workspace :工作区
 
 Index/Stage: 暂存区
 Repository: 本地仓库区
-Remote: 远程仓库
+Remote: 远程仓库在我把以下命令都一个个的实践之后，踩了不少的坑但是对上面这张图又有了新的认识所以我把这张图添加了一点东西，自己画了出来，字写的不好见谅
 
-新建代码库
-# 在当前目录新建一个Git代码库
-# 同时这个命令会在本在文件夹新建一个.git文件夹，这个就是git用来管理这个仓库的版本的
-$ git">
+
+我的理解是：">
 <meta property="og:image" content="http://odhsaddf1.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20160923160838.png">
-<meta property="og:updated_time" content="2016-09-23T11:42:17.080Z">
+<meta property="og:image" content="http://odhsaddf1.bkt.clouddn.com/820964870314659383.jpg">
+<meta property="og:updated_time" content="2016-09-23T14:33:32.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令的使用">
 <meta name="twitter:description" content="git命令的使用
@@ -143,12 +140,10 @@ Workspace :工作区
 
 Index/Stage: 暂存区
 Repository: 本地仓库区
-Remote: 远程仓库
+Remote: 远程仓库在我把以下命令都一个个的实践之后，踩了不少的坑但是对上面这张图又有了新的认识所以我把这张图添加了一点东西，自己画了出来，字写的不好见谅
 
-新建代码库
-# 在当前目录新建一个Git代码库
-# 同时这个命令会在本在文件夹新建一个.git文件夹，这个就是git用来管理这个仓库的版本的
-$ git">
+
+我的理解是：">
 <meta name="twitter:image" content="http://odhsaddf1.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20160923160838.png">
 
 
@@ -387,8 +382,14 @@ $ git">
 </li>
 <li>Index/Stage: 暂存区</li>
 <li>Repository: 本地仓库区</li>
-<li>Remote: 远程仓库</li>
+<li>Remote: 远程仓库<br>在我把以下命令都一个个的实践之后，踩了不少的坑但是对上面这张图又有了新的认识<br>所以我把这张图添加了一点东西，自己画了出来，字写的不好见谅<br><img src="http://odhsaddf1.bkt.clouddn.com/820964870314659383.jpg" alt="git02"></li>
 </ul>
+<blockquote>
+<p>我的理解是：</p>
+<blockquote>
+<p>工作区，暂存区，本地仓库都是只有一个<br>但是remote命令可以指定多个远程仓库，也就是一个本地仓库可以push到多个远程<br>仓库，而这里的remote是为本地仓库指定远程仓库的，<br>另外分支也是一样的，不同的分支下commit也是到不到的分支<br>另外吐嘈一下，谁说git很简单？</p>
+</blockquote>
+</blockquote>
 <p>新建代码库</p>
 <pre><code># 在当前目录新建一个Git代码库
 # 同时这个命令会在本在文件夹新建一个.git文件夹，这个就是git用来管理这个仓库的版本的
@@ -458,6 +459,55 @@ $ git rm --cached [file]
 
 # 改名文件，并且将这个改名放入暂存区
 $ git mv [file-original] [file-renamed]
+</code></pre><h3 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h3><hr>
+<ul>
+<li>另外提一点这里的[]和-，一般前面跟一个-的是英文缩写，用两个–是英语全拼</li>
+<li>至于[]是指前面的选项的参数，你要到这个选项就必须要有参数<br>git commit -m [message] 例如这个括里的message指的就是前面-m的参数，不过这也是我的理解，如有错误欢迎指正</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 提交暂存区到仓库区</div><div class="line">$ git commit -m [message]</div><div class="line"></div><div class="line"># 提交暂存区的指定文件到仓库区</div><div class="line">$ git commit [file1] [file2] ... -m [message]</div><div class="line"></div><div class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</div><div class="line">$ git commit -a</div><div class="line"></div><div class="line"># 提交时显示所有diff信息</div><div class="line">$ git commit -v</div><div class="line"></div><div class="line"># 使用一次新的commit，替代上一次提交</div><div class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</div><div class="line">$ git commit --amend -m [message]</div><div class="line"></div><div class="line"># 重做上一次commit，并包括指定文件的新变化</div><div class="line">$ git commit --amend [file1] [file2] ...</div></pre></td></tr></table></figure>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><pre><code>
+# 列出所有本地分支
+$ git branch
+
+# 列出所有远程分支
+$ git branch -r
+
+# 列出所有本地分支和远程分支
+$ git branch -a
+
+# 新建一个分支，但依然停留在当前分支
+$ git branch [branch-name]
+
+# 新建一个分支，并切换到该分支
+$ git checkout -b [branch]
+
+# 新建一个分支，指向指定commit
+$ git branch [branch] [commit]
+
+# 新建一个分支，与指定的远程分支建立追踪关系
+$ git branch --track [branch] [remote-branch]
+
+# 切换到指定分支，并更新工作区
+$ git checkout [branch-name]
+
+# 切换到上一个分支
+$ git checkout -
+
+# 建立追踪关系，在现有分支与指定的远程分支之间
+$ git branch --set-upstream [branch] [remote-branch]
+
+# 合并指定分支到当前分支
+$ git merge [branch]
+
+# 选择一个commit，合并进当前分支
+$ git cherry-pick [commit]
+
+# 删除分支
+$ git branch -d [branch-name]
+
+# 删除远程分支
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
 </code></pre>
       
     </div>
@@ -647,7 +697,7 @@ $ git mv [file-original] [file-renamed]
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提交"><span class="nav-number">1.</span> <span class="nav-text">代码提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">2.</span> <span class="nav-text">分支</span></a></li></ol></div>
             
           </div>
         </section>
