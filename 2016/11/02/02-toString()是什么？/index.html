@@ -1,0 +1,754 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Input Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="patterns,prototype,toString()," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="toString()是从哪里来的
+
+2.1 toString()是什么？当查看各种文档时候，你会发现字符串有toString()，数组有toString()，时间对象也有toString()，其实任何东西都toString();但是有两样东西没有toString();
+
+这是因为所有的对象都是继承自Object，而toString()是Object.prototype上的方法，也就是toStri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="toString()是什么？">
+<meta property="og:url" content="http://yoursite.com/2016/11/02/02-toString()是什么？/index.html">
+<meta property="og:site_name" content="Linmo Blog">
+<meta property="og:description" content="toString()是从哪里来的
+
+2.1 toString()是什么？当查看各种文档时候，你会发现字符串有toString()，数组有toString()，时间对象也有toString()，其实任何东西都toString();但是有两样东西没有toString();
+
+这是因为所有的对象都是继承自Object，而toString()是Object.prototype上的方法，也就是toStri">
+<meta property="og:updated_time" content="2016-12-24T10:58:41.520Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="toString()是什么？">
+<meta name="twitter:description" content="toString()是从哪里来的
+
+2.1 toString()是什么？当查看各种文档时候，你会发现字符串有toString()，数组有toString()，时间对象也有toString()，其实任何东西都toString();但是有两样东西没有toString();
+
+这是因为所有的对象都是继承自Object，而toString()是Object.prototype上的方法，也就是toStri">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6330096386301756000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/02/02-toString()是什么？/"/>
+
+  <title> toString()是什么？ | Linmo Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Linmo Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">More time for JS</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-comments">
+          <a href="/comments" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                toString()是什么？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-02T18:56:23+08:00" content="2016-11-02">
+              2016-11-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/patterns/" itemprop="url" rel="index">
+                    <span itemprop="name">patterns</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/02/02-toString()是什么？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/02/02-toString()是什么？/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>toString()是从哪里来的</p>
+</blockquote>
+<h4 id="2-1-toString-是什么？"><a href="#2-1-toString-是什么？" class="headerlink" title="2.1 toString()是什么？"></a>2.1 toString()是什么？</h4><p>当查看各种文档时候，你会发现字符串有toString()，数组有toString()，时间对象也有toString()，其实任何东西都toString();但是有两样东西没有toString();</p>
+<hr>
+<p>这是因为所有的对象都是继承自Object，而toString()是Object.prototype上的方法，也就是toString方法是Object的原型方法，而所有类型都是继承自Object，而你所创建的所有变量都是这些原始类型的实例，那js中的原始类型都是哪些？<code>数值、字符串、布尔值</code><br>为什么这三种原始类型也是对象呢？因为这三种原始类型会在一定条件下自动转换为对象，也就是所谓的包装对象。<br>那什么又是包装对象呢？</p>
+<ul>
+<li>其实就是把上面三种原始类型包装成对应的<code>Number、String、Boolean</code><br>好了，那看过高程这么本js圣经的人都知道js的原始值类型有五种那两种null、和undefined是跑哪去了？为什么要null和undefined？他们不是都表示无吗？<ul>
+<li>这个问题就要追溯js的设计的时候了。<br>以下观点为我在阮老师的技术文档中看到的。<blockquote>
+<p>js在设计之初只有null，表示“无”的值根据c语言的传统，null可以自动转为0<br>但设计者觉得这样不好区分所以加入了<code>undefined</code>表示一个”无“的原始值，转换为数值是为NaN，但是null却很特殊，js把它包含在对象类型之中</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// null</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) <span class="comment">// 0</span></div><div class="line"></div><div class="line"><span class="number">10</span>+<span class="literal">null</span> <span class="comment">// 5</span></div><div class="line"></div><div class="line"><span class="built_in">String</span>(<span class="literal">null</span>) <span class="comment">// "null"</span></div><div class="line"></div><div class="line"><span class="built_in">Date</span>(<span class="literal">null</span>) <span class="comment">// "Sat Dec 24 2016 18:05:04 GMT+0800 (中国标准时间)"</span></div><div class="line"></div><div class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="comment">// undefined</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) <span class="comment">// NaN</span></div><div class="line"></div><div class="line"><span class="built_in">String</span>(<span class="literal">undefined</span>) <span class="comment">// "undefined"</span></div><div class="line"></div><div class="line">Arrary(<span class="literal">undefined</span>) <span class="comment">// [undefined]</span></div><div class="line"></div><div class="line"><span class="built_in">Date</span>(<span class="literal">undefined</span>) <span class="comment">// "Sat Dec 24 2016 18:08:38 GMT+0800 (中国标准时间)"</span></div><div class="line"></div><div class="line"><span class="built_in">Boolean</span>(<span class="literal">undefined</span>) <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// "object"</span></div><div class="line"></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// "undefined"</span></div></pre></td></tr></table></figure>
+<h3 id="2-1-toString-的各种不同"><a href="#2-1-toString-的各种不同" class="headerlink" title="2.1 toString()的各种不同"></a>2.1 toString()的各种不同</h3><p>让我来看一下以下现象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 基本值类型</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="string">"uiui898"</span>;</div><div class="line"><span class="keyword">var</span> c = [<span class="string">"string"</span>,<span class="string">"90"</span>,<span class="number">78</span>];</div><div class="line"><span class="keyword">var</span> d = <span class="literal">false</span>;</div><div class="line"></div><div class="line">a.toString(); <span class="comment">// "20"</span></div><div class="line">b.toString(); <span class="comment">// "uiui898"</span></div><div class="line">c.toString(); <span class="comment">// "string,90,78"</span></div><div class="line">d.toString(); <span class="comment">// "false"</span></div><div class="line"></div><div class="line"><span class="comment">// 函数和对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">"i am a function"</span>)&#125;;</div><div class="line">fn.toString();</div><div class="line"><span class="comment">// "function fn()&#123;console.log("i am a function")&#125;"</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">"i am a constructor"</span>)&#125;</div><div class="line"><span class="keyword">var</span> fn=<span class="keyword">new</span> Fn();fn.toString();</div><div class="line"><span class="comment">// i am a constructor</span></div><div class="line"><span class="comment">// "[object Object]"</span></div></pre></td></tr></table></figure>
+<p>从以上代码我们可以看出什么？</p>
+<ul>
+<li>各种类型的toString的方法都是继承自Object</li>
+<li>但是继承之后自己又重写了toString方法。</li>
+</ul>
+<h4 id="那为什么alert会有-object-Object-呢？"><a href="#那为什么alert会有-object-Object-呢？" class="headerlink" title="那为什么alert会有[object Object]呢？"></a>那为什么alert会有[object Object]呢？</h4><p>因为alert()自动调用了该参数的toString()方法。</p>
+<p>那为什么第一个alert(fn)和第二个alert(fn)会有这么大不同呢？</p>
+<p>第一个fn是函数，但是也是对象。函数是什么?是Function的实例。因为Function也是对象，也以也继承了Object的toString方法，但是同时也重写了此方法。所以才会出现第一种现象。</p>
+<p>第二个fn是一个由constructor创建的对象，那它就是Object的实例，更是Fn的实例，但是Fn是什么？当使用new关键字的时候它是一个constructor，当不使用new的时候只是普通函数。这里使用了new，所以它是一个自定义对象类型。那自定义对象类型也是一个对象吧，它也是继承自Object的，但是这个Fn自定义类型重写了toString方法了吗？显然没有，所以此时fn调用的就是Object.prototype.toString方法。这个方法是具体是怎么定义的呢？查看<code>mdn</code>文档有以下一句解释。</p>
+<blockquote>
+<p> The <code>toString()</code> method returns a string representing the object.</p>
+</blockquote>
+<p>意思就是返回一个对象的字符串表示。</p>
+<blockquote>
+<p>ecma规范要求toString 方法返回[object Class]</p>
+</blockquote>
+<p>那第一个object是什么？是指对象。第二个大写的Object是指该对象类型。</p>
+<p>因为各原始类型都重写了toString，所以可以显式调用Object.prototype.toString()来判断一个对象的类型。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString.call([]); <span class="comment">// "[object Array]"</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">''</span>); <span class="comment">// "[object String]"</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">false</span>); <span class="comment">// "[object Boolean]"</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>); <span class="comment">// "[object Null]"</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>); <span class="comment">// "[object Undefined]"</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>本文是我自己一些心得和体会，各种参考资料也都是来自 mdn 或者阮一峰老师的技术文档。</p>
+<p>如有错误，欢迎指正。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/patterns/" rel="tag">#patterns</a>
+          
+            <a href="/tags/prototype/" rel="tag">#prototype</a>
+          
+            <a href="/tags/toString/" rel="tag">#toString()</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/01/1 alert有什么可谈的？/" rel="next" title="alert有什么可谈的？">
+                <i class="fa fa-chevron-left"></i> alert有什么可谈的？
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/02/02-toString()是什么？/"
+           data-title="toString()是什么？" data-url="http://yoursite.com/2016/11/02/02-toString()是什么？/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="Linmo" />
+          <p class="site-author-name" itemprop="name">Linmo</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/linmodev" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/linmodev" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://bonzstars.github.io/" title="Bonzstars" target="_blank">Bonzstars</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-toString-是什么？"><span class="nav-number">1.</span> <span class="nav-text">2.1 toString()是什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-toString-的各种不同"><span class="nav-number"></span> <span class="nav-text">2.1 toString()的各种不同</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#那为什么alert会有-object-Object-呢？"><span class="nav-number">1.</span> <span class="nav-text">那为什么alert会有[object Object]呢？</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Linmo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"linmodev"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
