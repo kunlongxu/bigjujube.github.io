@@ -110,7 +110,7 @@
 2.1 toString()是什么？当查看各种文档时候，你会发现字符串有toString()，数组有toString()，时间对象也有toString()，其实任何东西都toString();但是有两样东西没有toString();
 
 这是因为所有的对象都是继承自Object，而toString()是Object.prototype上的方法，也就是toStri">
-<meta property="og:updated_time" content="2016-12-24T10:58:41.520Z">
+<meta property="og:updated_time" content="2016-12-24T11:01:32.600Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="toString()是什么？">
 <meta name="twitter:description" content="toString()是从哪里来的
@@ -363,7 +363,9 @@
 </blockquote>
 <h4 id="2-1-toString-是什么？"><a href="#2-1-toString-是什么？" class="headerlink" title="2.1 toString()是什么？"></a>2.1 toString()是什么？</h4><p>当查看各种文档时候，你会发现字符串有toString()，数组有toString()，时间对象也有toString()，其实任何东西都toString();但是有两样东西没有toString();</p>
 <hr>
-<p>这是因为所有的对象都是继承自Object，而toString()是Object.prototype上的方法，也就是toString方法是Object的原型方法，而所有类型都是继承自Object，而你所创建的所有变量都是这些原始类型的实例，那js中的原始类型都是哪些？<code>数值、字符串、布尔值</code><br>为什么这三种原始类型也是对象呢？因为这三种原始类型会在一定条件下自动转换为对象，也就是所谓的包装对象。<br>那什么又是包装对象呢？</p>
+<p>这是因为所有的对象都是继承自Object，而toString()是Object.prototype上的方法，也就是toString方法是Object的原型方法，而所有类型都是继承自Object，而你所创建的所有变量都是这些原始类型的实例，那js中的原始类型都是哪些？<code>数值、字符串、布尔值</code><br>为什么这三种原始类型也是对象呢？因为这三种原始类型会在一定条件下自动转换为对象，也就是所谓的包装对象。</p>
+<hr>
+<p>那什么又是包装对象呢？</p>
 <ul>
 <li>其实就是把上面三种原始类型包装成对应的<code>Number、String、Boolean</code><br>好了，那看过高程这么本js圣经的人都知道js的原始值类型有五种那两种null、和undefined是跑哪去了？为什么要null和undefined？他们不是都表示无吗？<ul>
 <li>这个问题就要追溯js的设计的时候了。<br>以下观点为我在阮老师的技术文档中看到的。<blockquote>
