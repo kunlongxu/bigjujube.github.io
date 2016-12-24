@@ -96,9 +96,7 @@
 
 
 
-<meta name="description" content="git命令的使用
-
-git的工作流程———–要想学好git，下面这个图一定要记牢，要理解，不然你仍然茫然不知所措
+<meta name="description" content="git的工作流程———–要想学好git，下面这个图一定要记牢，要理解，不然你仍然茫然不知所措
 
 
 Workspace :工作区
@@ -108,14 +106,14 @@ Repository: 本地仓库区
 Remote: 远程仓库在我把以下命令都一个个的实践之后，踩了不少的坑但是对上面这张图又有了新的认识所以我把这张图添加了一点东西，自己画了出来，字写的不好见谅
 
 
-我的理解是：">
+我的理解是：
+
+工作区，暂存区，本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git命令的使用">
 <meta property="og:url" content="http://yoursite.com/2016/09/23/git命令的使用/index.html">
 <meta property="og:site_name" content="Linmo Blog">
-<meta property="og:description" content="git命令的使用
-
-git的工作流程———–要想学好git，下面这个图一定要记牢，要理解，不然你仍然茫然不知所措
+<meta property="og:description" content="git的工作流程———–要想学好git，下面这个图一定要记牢，要理解，不然你仍然茫然不知所措
 
 
 Workspace :工作区
@@ -125,15 +123,15 @@ Repository: 本地仓库区
 Remote: 远程仓库在我把以下命令都一个个的实践之后，踩了不少的坑但是对上面这张图又有了新的认识所以我把这张图添加了一点东西，自己画了出来，字写的不好见谅
 
 
-我的理解是：">
+我的理解是：
+
+工作区，暂存区，本">
 <meta property="og:image" content="http://odhsaddf1.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20160923160838.png">
 <meta property="og:image" content="http://odhsaddf1.bkt.clouddn.com/820964870314659383.jpg">
-<meta property="og:updated_time" content="2016-09-23T14:33:32.717Z">
+<meta property="og:updated_time" content="2016-09-23T14:51:43.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令的使用">
-<meta name="twitter:description" content="git命令的使用
-
-git的工作流程———–要想学好git，下面这个图一定要记牢，要理解，不然你仍然茫然不知所措
+<meta name="twitter:description" content="git的工作流程———–要想学好git，下面这个图一定要记牢，要理解，不然你仍然茫然不知所措
 
 
 Workspace :工作区
@@ -143,7 +141,9 @@ Repository: 本地仓库区
 Remote: 远程仓库在我把以下命令都一个个的实践之后，踩了不少的坑但是对上面这张图又有了新的认识所以我把这张图添加了一点东西，自己画了出来，字写的不好见谅
 
 
-我的理解是：">
+我的理解是：
+
+工作区，暂存区，本">
 <meta name="twitter:image" content="http://odhsaddf1.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20160923160838.png">
 
 
@@ -373,8 +373,7 @@ Remote: 远程仓库在我把以下命令都一个个的实践之后，踩了不
       
 
       
-        <p>git命令的使用</p>
-<ul>
+        <ul>
 <li><p>git的工作流程———–要想学好git，下面这个图一定要记牢，要理解，不然你仍然茫然不知所措</p>
 <p><img src="http://odhsaddf1.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20160923160838.png" alt="git"></p>
 </li>
@@ -390,7 +389,7 @@ Remote: 远程仓库在我把以下命令都一个个的实践之后，踩了不
 <p>工作区，暂存区，本地仓库都是只有一个<br>但是remote命令可以指定多个远程仓库，也就是一个本地仓库可以push到多个远程<br>仓库，而这里的remote是为本地仓库指定远程仓库的，<br>另外分支也是一样的，不同的分支下commit也是到不到的分支<br>另外吐嘈一下，谁说git很简单？</p>
 </blockquote>
 </blockquote>
-<p>新建代码库</p>
+<h3 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h3><hr>
 <pre><code># 在当前目录新建一个Git代码库
 # 同时这个命令会在本在文件夹新建一个.git文件夹，这个就是git用来管理这个仓库的版本的
 $ git init
@@ -402,7 +401,7 @@ $ git init [project-name]
 # 这个url是从github上找
 # git clone 这个命令一定要带参数，可选参数有很多
 $ git clone [url]
-</code></pre><p>配置</p>
+</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><hr>
 <p>Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
 <pre><code># 显示当前的Git配置
 $ git config --list
@@ -435,7 +434,7 @@ core.bare=false
 core.logallrefupdates=true
 core.symlinks=false
 core.ignorecase=true
-</code></pre><p>增加、删除文件</p>
+</code></pre><h3 id="增加、删除文件"><a href="#增加、删除文件" class="headerlink" title="增加、删除文件"></a>增加、删除文件</h3><hr>
 <p>这里有必要说一下，我在提交过程中，假如你在一个文件中修改了a和b两处，a处你用add添加到了暂存区，但是b处你还没有添加到暂存区，如果此时commit的话，只会把add了a处的暂存区提交到本地仓库，而b处是不会commit的</p>
 <pre><code># 添加指定文件到暂存区
 $ git add [file1] [file2] ...
@@ -465,7 +464,8 @@ $ git mv [file-original] [file-renamed]
 <li>至于[]是指前面的选项的参数，你要到这个选项就必须要有参数<br>git commit -m [message] 例如这个括里的message指的就是前面-m的参数，不过这也是我的理解，如有错误欢迎指正</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 提交暂存区到仓库区</div><div class="line">$ git commit -m [message]</div><div class="line"></div><div class="line"># 提交暂存区的指定文件到仓库区</div><div class="line">$ git commit [file1] [file2] ... -m [message]</div><div class="line"></div><div class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</div><div class="line">$ git commit -a</div><div class="line"></div><div class="line"># 提交时显示所有diff信息</div><div class="line">$ git commit -v</div><div class="line"></div><div class="line"># 使用一次新的commit，替代上一次提交</div><div class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</div><div class="line">$ git commit --amend -m [message]</div><div class="line"></div><div class="line"># 重做上一次commit，并包括指定文件的新变化</div><div class="line">$ git commit --amend [file1] [file2] ...</div></pre></td></tr></table></figure>
-<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><pre><code>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><hr>
+<pre><code>
 # 列出所有本地分支
 $ git branch
 
@@ -547,6 +547,10 @@ $ git branch -dr [remote/branch]
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/09/23/javascript模块化编程-转阮一峰/" rel="prev" title="javascript模块化编程-转阮一峰">
+                javascript模块化编程-转阮一峰 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -617,7 +621,7 @@ $ git branch -dr [remote/branch]
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -625,7 +629,7 @@ $ git branch -dr [remote/branch]
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -697,7 +701,7 @@ $ git branch -dr [remote/branch]
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提交"><span class="nav-number">1.</span> <span class="nav-text">代码提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">2.</span> <span class="nav-text">分支</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建代码库"><span class="nav-number">1.</span> <span class="nav-text">新建代码库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加、删除文件"><span class="nav-number">3.</span> <span class="nav-text">增加、删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提交"><span class="nav-number">4.</span> <span class="nav-text">代码提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">5.</span> <span class="nav-text">分支</span></a></li></ol></div>
             
           </div>
         </section>
