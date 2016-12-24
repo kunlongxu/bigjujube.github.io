@@ -107,7 +107,8 @@
 
 使用javascript已经有一段时间了，一直想写点什么，但是又苦于不知道写什么，我想大概每个人都会有这样的经历，但其实呢，并不是不知道写什么，而是你还没有get到js的点。在我想写点东西的时候总是在想，如果我想的和网上的全都一样就没什么可看的了，像js中的this指向什么？闭包怎么理解？这些都已经被谈到烂的话题，该写的，大家都已经写了，我就不再去插一脚了。我觉得从大">
 <meta property="og:image" content="http://yoursite.com/images/fn.png">
-<meta property="og:updated_time" content="2016-12-24T09:10:32.307Z">
+<meta property="og:image" content="http://yoursite.com/images/object.png">
+<meta property="og:updated_time" content="2016-12-24T09:11:57.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="alert有什么可谈的？">
 <meta name="twitter:description" content="alert有什么可谈的？
@@ -369,6 +370,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"i am a constructor"</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> Fn();</div><div class="line">alert(fn);</div></pre></td></tr></table></figure>
 <p>这段代码又会弹出什么呢？</p>
 <p><code>[object Object]</code></p>
+<p><img src="/images/object.png" alt=""></p>
 <p>这个东西大家应该都见过吧，那这个东西到底是什么呢？</p>
 <h3 id="1-2-看看alert都做了什么？"><a href="#1-2-看看alert都做了什么？" class="headerlink" title="1.2 看看alert都做了什么？"></a>1.2 看看alert都做了什么？</h3><p>alert()是一个挂载在window对象上的函数，这个大家都知道，注意，我说的是window，这里用的是小写。而这个函数是只接受字符串参数的。</p>
 <p>对于参数是字符串的情况我们都了解，但是当参数不是字符串时候呢？当参数不是字符串的时候，这是时候会自动调用toString()方法。把它转换成字符串。</p>
