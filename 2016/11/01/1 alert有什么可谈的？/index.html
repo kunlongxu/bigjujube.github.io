@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="patterns,prototype,toString()," />
 
 
 
@@ -96,28 +96,24 @@
 
 
 
-<meta name="description" content="什么是回调函数最近在看nodejs,其中的用了大量的回调函数,以前学js时用ajax,用setTimeout觉得就是用了回调函数,但是为什么,自己也不是太明白,不过今天再看到nodejs时,感觉有必要补一下以前的坑
+<meta name="description" content="alert有什么可谈的？
 
-其中维基百科中的回调是这么写的
-
-In computer programming, a callback is a reference to a piece of executabl">
+使用javascript已经有一段时间了，一直想写点什么，但是又苦于不知道写什么，我想大概每个人都会有这样的经历，但其实呢，并不是不知道写什么，而是你还没有get到js的点。在我想写点东西的时候总是在想，如果我想的和网上的全都一样就没什么可看的了，像js中的this指向什么？闭包怎么理解？这些都已经被谈到烂的话题，该写的，大家都已经写了，我就不再去插一脚了。我觉得从大">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于JS中的回调函数和异步的理解">
-<meta property="og:url" content="http://yoursite.com/2016/09/14/关于JS中的回调函数和异步的理解/index.html">
+<meta property="og:title" content="alert有什么可谈的？">
+<meta property="og:url" content="http://yoursite.com/2016/11/01/1 alert有什么可谈的？/index.html">
 <meta property="og:site_name" content="Linmo Blog">
-<meta property="og:description" content="什么是回调函数最近在看nodejs,其中的用了大量的回调函数,以前学js时用ajax,用setTimeout觉得就是用了回调函数,但是为什么,自己也不是太明白,不过今天再看到nodejs时,感觉有必要补一下以前的坑
+<meta property="og:description" content="alert有什么可谈的？
 
-其中维基百科中的回调是这么写的
-
-In computer programming, a callback is a reference to a piece of executabl">
-<meta property="og:updated_time" content="2016-09-14T12:29:48.000Z">
+使用javascript已经有一段时间了，一直想写点什么，但是又苦于不知道写什么，我想大概每个人都会有这样的经历，但其实呢，并不是不知道写什么，而是你还没有get到js的点。在我想写点东西的时候总是在想，如果我想的和网上的全都一样就没什么可看的了，像js中的this指向什么？闭包怎么理解？这些都已经被谈到烂的话题，该写的，大家都已经写了，我就不再去插一脚了。我觉得从大">
+<meta property="og:image" content="http://yoursite.com/../images/fn.png">
+<meta property="og:updated_time" content="2016-12-24T08:59:31.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于JS中的回调函数和异步的理解">
-<meta name="twitter:description" content="什么是回调函数最近在看nodejs,其中的用了大量的回调函数,以前学js时用ajax,用setTimeout觉得就是用了回调函数,但是为什么,自己也不是太明白,不过今天再看到nodejs时,感觉有必要补一下以前的坑
+<meta name="twitter:title" content="alert有什么可谈的？">
+<meta name="twitter:description" content="alert有什么可谈的？
 
-其中维基百科中的回调是这么写的
-
-In computer programming, a callback is a reference to a piece of executabl">
+使用javascript已经有一段时间了，一直想写点什么，但是又苦于不知道写什么，我想大概每个人都会有这样的经历，但其实呢，并不是不知道写什么，而是你还没有get到js的点。在我想写点东西的时候总是在想，如果我想的和网上的全都一样就没什么可看的了，像js中的this指向什么？闭包怎么理解？这些都已经被谈到烂的话题，该写的，大家都已经写了，我就不再去插一脚了。我觉得从大">
+<meta name="twitter:image" content="http://yoursite.com/../images/fn.png">
 
 
 
@@ -138,9 +134,9 @@ In computer programming, a callback is a reference to a piece of executabl">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/14/关于JS中的回调函数和异步的理解/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/01/1 alert有什么可谈的？/"/>
 
-  <title> 关于JS中的回调函数和异步的理解 | Linmo Blog </title>
+  <title> alert有什么可谈的？ | Linmo Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +276,7 @@ In computer programming, a callback is a reference to a piece of executabl">
             
             
               
-                关于JS中的回调函数和异步的理解
+                alert有什么可谈的？
               
             
           </h1>
@@ -292,8 +288,8 @@ In computer programming, a callback is a reference to a piece of executabl">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-14T16:41:30+08:00" content="2016-09-14">
-              2016-09-14
+            <time itemprop="dateCreated" datetime="2016-11-01T19:25:23+08:00" content="2016-11-01">
+              2016-11-01
             </time>
           </span>
 
@@ -306,8 +302,20 @@ In computer programming, a callback is a reference to a piece of executabl">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ES语法/" itemprop="url" rel="index">
-                    <span itemprop="name">ES语法</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/patterns/" itemprop="url" rel="index">
+                    <span itemprop="name">patterns</span>
                   </a>
                 </span>
 
@@ -322,8 +330,8 @@ In computer programming, a callback is a reference to a piece of executabl">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/14/关于JS中的回调函数和异步的理解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/14/关于JS中的回调函数和异步的理解/" itemprop="commentsCount"></span>
+                <a href="/2016/11/01/1 alert有什么可谈的？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/01/1 alert有什么可谈的？/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -346,36 +354,26 @@ In computer programming, a callback is a reference to a piece of executabl">
       
 
       
-        <h2 id="什么是回调函数"><a href="#什么是回调函数" class="headerlink" title="什么是回调函数"></a>什么是回调函数</h2><p>最近在看nodejs,其中的用了大量的回调函数,以前学js时用ajax,用setTimeout觉得就是用了<br>回调函数,但是为什么,自己也不是太明白,不过今天再看到nodejs时,感觉有必要补一下以前的坑</p>
-<ul>
-<li><p>其中维基百科中的回调是这么写的</p>
-<blockquote>
-<p>In computer programming, a callback is a reference to a piece of executable code that is passed as an argument to other code.</p>
-<p>回调函数就是一个通过函数指针调用的函数。如果你把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用为调用它所指向的函数时，我们就说这是回调函数。回调函数不是由该函数的实现方直接调用，而是在特定的事件或条件发生时由另外的一方调用的，用于对该事件或条件进行响应。</p>
+        <blockquote>
+<p>alert有什么可谈的？</p>
 </blockquote>
-</li>
-<li><p>因此callback不一定用于异步，一般同步阻塞的场景下也经常用到回调，比如要求执行某些操作后执行回调函数。</p>
-</li>
-</ul>
-<h3 id="同步阻塞的回调"><a href="#同步阻塞的回调" class="headerlink" title="同步阻塞的回调"></a>同步阻塞的回调</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> func1 = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</div><div class="line"><span class="comment">//do something.</span></div><div class="line">(callback &amp;&amp; <span class="keyword">typeof</span>(callback) === <span class="string">"function"</span>) &amp;&amp; callback();</div><div class="line">&#125;</div><div class="line"></div><div class="line">func1(func2);</div><div class="line"><span class="keyword">var</span> func2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div></pre></td></tr></table></figure>
-<h3 id="异步回调的例子："><a href="#异步回调的例子：" class="headerlink" title="异步回调的例子："></a>异步回调的例子：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(callback);</div><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">    url: <span class="string">"test.html"</span>,</div><div class="line">    context: <span class="built_in">document</span>.body</div><div class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).addClass(<span class="string">"done"</span>);</div><div class="line">&#125;).fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"error"</span>);</div><div class="line">&#125;).always(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">"complete"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">/**</span></div><div class="line">注意的是，ajax请求确实是异步的,不过这请求是由浏览器新开一个线程请求,当请求的状态变更时,如果先前已设置回调,这异步线程就产生状态变更事件放到 JavaScript引擎的处理队列中等待处理。见：http://www.phpv.net/html/1700.html</div><div class="line">*/</div></pre></td></tr></table></figure>
-<h3 id="回调什么时候执行"><a href="#回调什么时候执行" class="headerlink" title="回调什么时候执行"></a>回调什么时候执行</h3><ul>
-<li>回调函数，一般在同步情境下是最后执行的，而在异步情境下有可能不执行，因为事件没有被触发或者条件不满足。</li>
-</ul>
-<h3 id="回调函数的使用场合"><a href="#回调函数的使用场合" class="headerlink" title="回调函数的使用场合"></a>回调函数的使用场合</h3><ul>
-<li>资源加载：动态加载js文件后执行回调，加载iframe后执行回调，ajax操作回调，图片加载完成执行回调，AJAX等等。</li>
-<li>DOM事件及Node.js事件基于回调机制(Node.js回调可能会出现多层回调嵌套的问题)。</li>
-<li>setTimeout的延迟时间为0，这个hack经常被用到，settimeout调用的函数其实就是一个callback的体现</li>
-<li>链式调用：链式调用的时候，在赋值器(setter)方法中(或者本身没有返回值的方法中)很容易实现链式调用，而取值器(getter)相对来说不好实现链式调用，因为你需要取值器返回你需要的数据而不是this指针，如果要实现链式方法，可以用回调函数来实现</li>
-<li>setTimeout、setInterval的函数调用得到其返回值。由于两个函数都是异步的，即：他们的调用时序和程序的主流程是相对独立的，所以没有办法在主体里面等待它们的返回值，它们被打开的时候程序也不会停下来等待，否则也就失去了setTimeout及setInterval的意义了，所以用return已经没有意义，只能使用callback。callback的意义在于将timer执行的结果通知给代理函数进行及时处理。</li>
-</ul>
-<h3 id="回调函数的传递"><a href="#回调函数的传递" class="headerlink" title="回调函数的传递"></a>回调函数的传递</h3><ul>
-<li>上面说了，要将函数引用或者函数表达式作为参数传递。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$.get(<span class="string">'myhtmlpage.html'</span>, myCallBack); <span class="comment">//这是对的</span></div><div class="line">$.get(<span class="string">'myhtmlpage.html'</span>, myCallBack(<span class="string">'foo'</span>, <span class="string">'bar'</span>)); <span class="comment">//这是错的，那么要带参数呢？</span></div><div class="line">$.get(<span class="string">'myhtmlpage.html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//带参数的使用函数表达式</span></div><div class="line">    myCallBack(<span class="string">'foo'</span>, <span class="string">'bar'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>另外，最好保证回调存在且必须是函数引用或者函数表达式：(callback &amp;&amp; typeof(callback) === “function”) &amp;&amp; callback();</p>
-</blockquote>
+<p>使用javascript已经有一段时间了，一直想写点什么，但是又苦于不知道写什么，我想大概每个人都会有这样的经历，但其实呢，并不是不知道写什么，而是你还没有get到js的点。<br>在我想写点东西的时候总是在想，如果我想的和网上的全都一样就没什么可看的了，像js中的this指向什么？闭包怎么理解？这些都已经被谈到烂的话题，该写的，大家都已经写了，我就不再去插一脚了。<br>我觉得从大家最常见的现象入手是最好的方法，小事情往往孕育着大智慧。</p>
+<p>下面开始讲正文</p>
+<h3 id="1-1-看一下这些现象"><a href="#1-1-看一下这些现象" class="headerlink" title="1.1 看一下这些现象"></a>1.1 看一下这些现象</h3><p>首先看下面一段代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'i am a function'</span>);</div><div class="line">&#125;</div><div class="line">alert(fn);</div></pre></td></tr></table></figure>
+<p>会弹出什么结果呢？</p>
+<p><code>// results function fn () {console.log(&#39;i am a function&#39;);}</code></p>
+<p><img src="../images/fn.png" alt=""></p>
+<p>为什么会是这个结果？</p>
+<p>下面再来看下一段代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"i am a constructor"</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> Fn();</div><div class="line">alert(fn);</div></pre></td></tr></table></figure>
+<p>这段代码又会弹出什么呢？</p>
+<p><code>[object Object]</code></p>
+<p>这个东西大家应该都见过吧，那这个东西到底是什么呢？</p>
+<h3 id="1-2-看看alert都做了什么？"><a href="#1-2-看看alert都做了什么？" class="headerlink" title="1.2 看看alert都做了什么？"></a>1.2 看看alert都做了什么？</h3><p>alert()是一个挂载在window对象上的函数，这个大家都知道，注意，我说的是window，这里用的是小写。而这个函数是只接受字符串参数的。</p>
+<p>对于参数是字符串的情况我们都了解，但是当参数不是字符串时候呢？当参数不是字符串的时候，这是时候会自动调用toString()方法。把它转换成字符串。</p>
+<p>所以才出现了上述这种<code>[object Object]</code>。</p>
+<p>好了，这一章就先讲到这里，下一节我们说一下什么是<code>[object Object]</code>。</p>
 
       
     </div>
@@ -398,7 +396,11 @@ In computer programming, a callback is a reference to a piece of executabl">
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/patterns/" rel="tag">#patterns</a>
+          
+            <a href="/tags/prototype/" rel="tag">#prototype</a>
+          
+            <a href="/tags/toString/" rel="tag">#toString()</a>
           
         </div>
       
@@ -407,13 +409,13 @@ In computer programming, a callback is a reference to a piece of executabl">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/30/JavaScriptPatterns/" rel="next" title="让我们从一个alert开始弹起">
+                <i class="fa fa-chevron-left"></i> 让我们从一个alert开始弹起
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/14/set-sublime-brower-for-chrome/" rel="prev" title="为sublime设置快捷键打开浏览器">
-                为sublime设置快捷键打开浏览器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -439,8 +441,8 @@ In computer programming, a callback is a reference to a piece of executabl">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/14/关于JS中的回调函数和异步的理解/"
-           data-title="关于JS中的回调函数和异步的理解" data-url="http://yoursite.com/2016/09/14/关于JS中的回调函数和异步的理解/">
+      <div class="ds-thread" data-thread-key="2016/11/01/1 alert有什么可谈的？/"
+           data-title="alert有什么可谈的？" data-url="http://yoursite.com/2016/11/01/1 alert有什么可谈的？/">
       </div>
     
   </div>
@@ -565,7 +567,7 @@ In computer programming, a callback is a reference to a piece of executabl">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是回调函数"><span class="nav-number">1.</span> <span class="nav-text">什么是回调函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步阻塞的回调"><span class="nav-number">1.1.</span> <span class="nav-text">同步阻塞的回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步回调的例子："><span class="nav-number">1.2.</span> <span class="nav-text">异步回调的例子：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回调什么时候执行"><span class="nav-number">1.3.</span> <span class="nav-text">回调什么时候执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回调函数的使用场合"><span class="nav-number">1.4.</span> <span class="nav-text">回调函数的使用场合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回调函数的传递"><span class="nav-number">1.5.</span> <span class="nav-text">回调函数的传递</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-看一下这些现象"><span class="nav-number">1.</span> <span class="nav-text">1.1 看一下这些现象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-看看alert都做了什么？"><span class="nav-number">2.</span> <span class="nav-text">1.2 看看alert都做了什么？</span></a></li></ol></div>
             
           </div>
         </section>
