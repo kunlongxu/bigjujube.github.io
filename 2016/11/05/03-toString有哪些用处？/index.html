@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="sublime," />
+  <meta name="keywords" content="patterns,prototype,toString()," />
 
 
 
@@ -96,28 +96,43 @@
 
 
 
-<meta name="description" content="注意此方法需要SideBarEnhancements插件配合,这里是用的mac下的设置
+<meta name="description" content="toString有哪些用处？
 
-然后通过ctrl + k, ctrl + b打开侧边栏，在侧边栏的文件中右击，找到 open width -&amp;gt; edit applications然后在这里边设置firefox打开的方式。application : 路径要修改为自己默认安装的路径。
+3.1 看一下调用Object.prototype.toString的返回值
 
-1234567891011121314&amp;#123;">
+数值：返回[object Number]。
+字符串：返回[object String]。
+布尔值：返回[object Boolean]。
+undefined：返回[object Undefined]。
+null：返回[object Null]。
+数组：返回[object Array]。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为sublime设置快捷键打开浏览器">
-<meta property="og:url" content="http://yoursite.com/2016/09/14/set-sublime-brower-for-chrome/index.html">
+<meta property="og:title" content="toString有哪些用处？">
+<meta property="og:url" content="http://yoursite.com/2016/11/05/03-toString有哪些用处？/index.html">
 <meta property="og:site_name" content="Linmo Blog">
-<meta property="og:description" content="注意此方法需要SideBarEnhancements插件配合,这里是用的mac下的设置
+<meta property="og:description" content="toString有哪些用处？
 
-然后通过ctrl + k, ctrl + b打开侧边栏，在侧边栏的文件中右击，找到 open width -&amp;gt; edit applications然后在这里边设置firefox打开的方式。application : 路径要修改为自己默认安装的路径。
+3.1 看一下调用Object.prototype.toString的返回值
 
-1234567891011121314&amp;#123;">
-<meta property="og:updated_time" content="2016-09-14T12:32:34.000Z">
+数值：返回[object Number]。
+字符串：返回[object String]。
+布尔值：返回[object Boolean]。
+undefined：返回[object Undefined]。
+null：返回[object Null]。
+数组：返回[object Array]。">
+<meta property="og:updated_time" content="2016-12-24T12:13:04.570Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为sublime设置快捷键打开浏览器">
-<meta name="twitter:description" content="注意此方法需要SideBarEnhancements插件配合,这里是用的mac下的设置
+<meta name="twitter:title" content="toString有哪些用处？">
+<meta name="twitter:description" content="toString有哪些用处？
 
-然后通过ctrl + k, ctrl + b打开侧边栏，在侧边栏的文件中右击，找到 open width -&amp;gt; edit applications然后在这里边设置firefox打开的方式。application : 路径要修改为自己默认安装的路径。
+3.1 看一下调用Object.prototype.toString的返回值
 
-1234567891011121314&amp;#123;">
+数值：返回[object Number]。
+字符串：返回[object String]。
+布尔值：返回[object Boolean]。
+undefined：返回[object Undefined]。
+null：返回[object Null]。
+数组：返回[object Array]。">
 
 
 
@@ -138,9 +153,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/14/set-sublime-brower-for-chrome/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/05/03-toString有哪些用处？/"/>
 
-  <title> 为sublime设置快捷键打开浏览器 | Linmo Blog </title>
+  <title> toString有哪些用处？ | Linmo Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +295,7 @@
             
             
               
-                为sublime设置快捷键打开浏览器
+                toString有哪些用处？
               
             
           </h1>
@@ -292,8 +307,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-14T18:32:04+08:00" content="2016-09-14">
-              2016-09-14
+            <time itemprop="dateCreated" datetime="2016-11-05T16:38:23+08:00" content="2016-11-05">
+              2016-11-05
             </time>
           </span>
 
@@ -306,8 +321,20 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/sublime/" itemprop="url" rel="index">
-                    <span itemprop="name">sublime</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/patterns/" itemprop="url" rel="index">
+                    <span itemprop="name">patterns</span>
                   </a>
                 </span>
 
@@ -322,8 +349,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/14/set-sublime-brower-for-chrome/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/14/set-sublime-brower-for-chrome/" itemprop="commentsCount"></span>
+                <a href="/2016/11/05/03-toString有哪些用处？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/05/03-toString有哪些用处？/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -346,18 +373,30 @@
       
 
       
-        <p><em>注意此方法需要SideBarEnhancements插件配合,这里是用的mac下的设置</em></p>
+        <blockquote>
+<p>toString有哪些用处？</p>
+</blockquote>
+<h4 id="3-1-看一下调用Object-prototype-toString的返回值"><a href="#3-1-看一下调用Object-prototype-toString的返回值" class="headerlink" title="3.1 看一下调用Object.prototype.toString的返回值"></a>3.1 看一下调用Object.prototype.toString的返回值</h4><blockquote>
 <ul>
-<li>然后通过ctrl + k, ctrl + b打开侧边栏，在侧边栏的文件中右击，找到 open width -&gt; edit applications<br>然后在这里边设置firefox打开的方式。<br>application : 路径要修改为自己默认安装的路径。</li>
+<li>数值：返回<code>[object Number]</code>。</li>
+<li>字符串：返回<code>[object String]</code>。</li>
+<li>布尔值：返回<code>[object Boolean]</code>。</li>
+<li>undefined：返回<code>[object Undefined]</code>。</li>
+<li>null：返回<code>[object Null]</code>。</li>
+<li>数组：返回<code>[object Array]</code>。</li>
+<li>arguments对象：返回<code>[object Arguments]</code>。</li>
+<li>函数：返回<code>[object Function]</code>。</li>
+<li>Error对象：返回<code>[object Error]</code>。</li>
+<li>Date对象：返回<code>[object Date]</code>。</li>
+<li>RegExp对象：返回<code>[object RegExp]</code>。</li>
+<li>其他对象：返回<code>[object Object]</code>。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;</div><div class="line">    <span class="string">"caption"</span>: <span class="string">"Chrome"</span>,</div><div class="line">    <span class="string">"id"</span>: <span class="string">"side-bar-files-open-with-chrome"</span>,</div><div class="line"></div><div class="line">    <span class="string">"command"</span>: <span class="string">"side_bar_files_open_with"</span>,</div><div class="line">    <span class="string">"args"</span>: &#123;</div><div class="line">                        <span class="string">"paths"</span>: [],</div><div class="line">                        <span class="string">"application"</span>: <span class="string">"/Applications/Google Chrome.app"</span>,</div><div class="line">                        <span class="string">"extensions"</span>:<span class="string">".*"</span>, <span class="comment">//any file with extension</span></div><div class="line">                        <span class="string">"args"</span>:[]</div><div class="line">            &#125;,</div><div class="line">    <span class="string">"open_automatically"</span> : <span class="literal">false</span> <span class="comment">// will close the view/tab and launch the application</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>然后在Key-Bindings-User里设置一下</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[   </div><div class="line">    &#123; <span class="string">"keys"</span>: [<span class="string">"f12"</span>], <span class="string">"command"</span>: <span class="string">"open_in_browser"</span>&#125;,</div><div class="line">    &#123; <span class="string">"keys"</span>: [<span class="string">"alt+s"</span>], <span class="string">"command"</span>: <span class="string">"side_bar_files_open_with"</span>,</div><div class="line">                <span class="string">"args"</span>: &#123;</div><div class="line">                    <span class="string">"paths"</span>: [],</div><div class="line">                    <span class="string">"application"</span>: <span class="string">"/Applications/Google Chrome.app"</span>,</div><div class="line">                    <span class="string">"extensions"</span>:<span class="string">".*"</span> <span class="comment">//any file with extension</span></div><div class="line">                &#125; </div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<ul>
-<li>这里我设置的是alt+s打开chrome浏览器</li>
-</ul>
+</blockquote>
+<h4 id="3-2-利用这个特性写一个类型判断函数"><a href="#3-2-利用这个特性写一个类型判断函数" class="headerlink" title="3.2 利用这个特性写一个类型判断函数"></a>3.2 利用这个特性写一个类型判断函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> type = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> s = <span class="built_in">Object</span>.portotype.toString.call(obj);</div><div class="line">  <span class="keyword">return</span> s.match(<span class="regexp">/\[object (.*?)\]/</span>)[<span class="number">1</span>].toLowerCase();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面是测试结果</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">type(&#123;&#125;); <span class="comment">// "object"</span></div><div class="line">type([]); <span class="comment">// "array"</span></div><div class="line">type(<span class="number">5</span>); <span class="comment">// "number"</span></div><div class="line">type(<span class="literal">null</span>); <span class="comment">// "null"</span></div><div class="line">type(); <span class="comment">// "undefined"</span></div><div class="line">type(<span class="regexp">/abcd/</span>); <span class="comment">// "regex"</span></div><div class="line">type(<span class="keyword">new</span> <span class="built_in">Date</span>()); <span class="comment">// "date"</span></div></pre></td></tr></table></figure>
+<p>如果你想要这样的调用<code>type.isArray()</code>我们还可以这样添加一些方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">[<span class="string">'Null'</span>,</div><div class="line"> <span class="string">'Undefined'</span>,</div><div class="line"> <span class="string">'Object'</span>,</div><div class="line"> <span class="string">'Array'</span>,</div><div class="line"> <span class="string">'String'</span>,</div><div class="line"> <span class="string">'Number'</span>,</div><div class="line"> <span class="string">'Boolean'</span>,</div><div class="line"> <span class="string">'Function'</span>,</div><div class="line"> <span class="string">'RegExp'</span>,</div><div class="line"> <span class="string">'NaN'</span>,</div><div class="line"> <span class="string">'Infinite'</span></div><div class="line">].forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>)</span>&#123;</div><div class="line">  type[<span class="string">"is"</span> + item] = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> type(obj) === item.toLowerCase();</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">type.isObject(&#123;&#125;) <span class="comment">// true</span></div><div class="line">type.isNumber(<span class="literal">NaN</span>) <span class="comment">// true</span></div><div class="line">type.isRegExp(<span class="regexp">/abc/</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -380,7 +419,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sublime/" rel="tag">#sublime</a>
+            <a href="/tags/patterns/" rel="tag">#patterns</a>
+          
+            <a href="/tags/prototype/" rel="tag">#prototype</a>
+          
+            <a href="/tags/toString/" rel="tag">#toString()</a>
           
         </div>
       
@@ -389,17 +432,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/14/关于JS中的回调函数和异步的理解/" rel="next" title="关于JS中的回调函数和异步的理解">
-                <i class="fa fa-chevron-left"></i> 关于JS中的回调函数和异步的理解
+              <a href="/2016/11/02/02-toString()是什么？/" rel="next" title="toString()是什么？">
+                <i class="fa fa-chevron-left"></i> toString()是什么？
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/23/git命令的使用/" rel="prev" title="git命令的使用">
-                git命令的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -425,8 +464,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/14/set-sublime-brower-for-chrome/"
-           data-title="为sublime设置快捷键打开浏览器" data-url="http://yoursite.com/2016/09/14/set-sublime-brower-for-chrome/">
+      <div class="ds-thread" data-thread-key="2016/11/05/03-toString有哪些用处？/"
+           data-title="toString有哪些用处？" data-url="http://yoursite.com/2016/11/05/03-toString有哪些用处？/">
       </div>
     
   </div>
@@ -551,7 +590,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-看一下调用Object-prototype-toString的返回值"><span class="nav-number">1.</span> <span class="nav-text">3.1 看一下调用Object.prototype.toString的返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-利用这个特性写一个类型判断函数"><span class="nav-number">2.</span> <span class="nav-text">3.2 利用这个特性写一个类型判断函数</span></a></li></ol></div>
             
           </div>
         </section>
