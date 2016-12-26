@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/06/05-Javascript中的document/index.html">
 <meta property="og:site_name" content="Linmo Blog">
 <meta property="og:description" content="在操作html的dom时，我们最常用的就是document这个对象了，这次让我们聊一下这个对象的一些现象。">
-<meta property="og:updated_time" content="2016-12-26T15:20:25.155Z">
+<meta property="og:updated_time" content="2016-12-26T15:22:37.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript中的document">
 <meta name="twitter:description" content="在操作html的dom时，我们最常用的就是document这个对象了，这次让我们聊一下这个对象的一些现象。">
@@ -344,7 +344,7 @@
 <p>在这里，我们用new创建了一个对象，但它更是Animal的实例，按照正常编码规范，大写的是Class，但是Javascript里没有这个概念，但是通过变通的方式我们可以实现这上效果。所以要记住的很重要的一点，实例通常都是小写的。</p>
 <h3 id="二、document的继承链"><a href="#二、document的继承链" class="headerlink" title="二、document的继承链"></a>二、document的继承链</h3><p>上一节我们看到了，ducument通过<code>__proto__</code>向上找，找到的是HTMLDocument。那我们接着向上找一下，看看都有document都继承了哪些对象原型上的方法。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.__proto__ </div><div class="line"><span class="comment">//HTMLDocument &#123;Symbol(Symbol.toStringTag): "HTMLDocument"&#125;</span></div><div class="line"><span class="built_in">document</span>.__proto__.__proto__ </div><div class="line"><span class="comment">//Document &#123;Symbol(Symbol.toStringTag): "Document"&#125;</span></div><div class="line"><span class="built_in">document</span>.__proto__.__proto__.__proto__</div><div class="line"><span class="comment">//Node &#123;ELEMENT_NODE: 1, ATTRIBUTE_NODE: 2, TEXT_NODE: ...&#125;</span></div><div class="line"><span class="built_in">document</span>.__proto__.__proto__.__proto__.__proto__</div><div class="line"><span class="comment">//EventTarget &#123;Symbol(Symbol.toStringTag): "EventTarget"&#125;</span></div><div class="line"><span class="built_in">document</span>.__proto__.__proto__.__proto__.__proto__.__proto__ </div><div class="line"><span class="comment">//Object &#123;&#125;</span></div></pre></td></tr></table></figure>
-<p>这些结果很容易验证，大家可以在浏览器控制台输出一下，我们平常所用的那些方法全是挂载到这些对象上的原型上的，所以搞明白了这个我们就更好的理解对象了，在使用方法也更加的顺手了，至于这些对象都有哪些方法，下面几节会一一的讲，让我们小步快跑的学习吧，我觉得长篇大论的文章让人看着实费劲，所以，我写的每一骗文章都会控制在一点的范围。</p>
+<p>这些结果很容易验证，大家可以在浏览器控制台输出一下，我们平常所用的那些方法全是挂载到这些对象上的原型上的，所以搞明白了这个我们就更好的理解对象了，在使用方法也更加的顺手了，至于这些对象都有哪些方法，下面几节会一一的讲，让我们小步快跑的学习吧，我觉得长篇大论的文章让人看着实费劲，所以，我写的每一骗文章都会控制在一定的范围之内。</p>
 
       
     </div>
