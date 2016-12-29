@@ -1,0 +1,776 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Input Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="原生对象," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="string对象是原生提供的三个包装对象之一，每天一个对象系列，学习好原生才能更好的使用js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String对象的学习">
+<meta property="og:url" content="http://yoursite.com/2016/01/06/String对象的学习/index.html">
+<meta property="og:site_name" content="Linmo Blog">
+<meta property="og:description" content="string对象是原生提供的三个包装对象之一，每天一个对象系列，学习好原生才能更好的使用js">
+<meta property="og:updated_time" content="2016-12-29T11:16:50.604Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="String对象的学习">
+<meta name="twitter:description" content="string对象是原生提供的三个包装对象之一，每天一个对象系列，学习好原生才能更好的使用js">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6330096386301756000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/01/06/String对象的学习/"/>
+
+  <title> String对象的学习 | Linmo Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Linmo Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">More time for JS</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-comments">
+          <a href="/comments" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                String对象的学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-06T16:38:23+08:00" content="2016-01-06">
+              2016-01-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/06/String对象的学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/String对象的学习/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="String对象的学习"><a href="#String对象的学习" class="headerlink" title="String对象的学习"></a>String对象的学习</h1><p>string对象是原生提供的三个包装对象之一</p>
+<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><h3 id="fromCharCode方法"><a href="#fromCharCode方法" class="headerlink" title="fromCharCode方法"></a>fromCharCode方法</h3><ul>
+<li>返回字符串</li>
+<li>一系列的Unicode码点</li>
+</ul>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><h3 id="charAt-方法"><a href="#charAt-方法" class="headerlink" title="charAt 方法"></a>charAt 方法</h3><ul>
+<li>返回指定位置的字符</li>
+<li>参数是从0开始编号的位置</li>
+<li>如果参数大于等于字符串的长度，返回空字符串。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">'fdkjfdk'</span>.charAt(<span class="number">3</span>) <span class="comment">// "j"</span></div><div class="line"><span class="string">'fdaffdsa'</span>[<span class="number">3</span>] <span class="comment">// "f"</span></div><div class="line"><span class="string">'fdaffdsa'</span>[<span class="number">30</span>] <span class="comment">// undefined</span></div><div class="line"><span class="string">'fdkjfdk'</span>.charAt(<span class="number">30</span>) <span class="comment">// ""</span></div></pre></td></tr></table></figure>
+<p>该方法完全可以用数组下标代替。</p>
+<h3 id="charCodeAt-方法"><a href="#charCodeAt-方法" class="headerlink" title="charCodeAt 方法"></a>charCodeAt 方法</h3><p>返回给定位置字符的UniCode码点以十进制表示相当于fromCharCode的逆操作。</p>
+<ul>
+<li>如果参数为负数，或大于等于字符串的长度，返回NaN</li>
+</ul>
+<h3 id="concat-方法"><a href="#concat-方法" class="headerlink" title="concat 方法"></a>concat 方法</h3><p>该方法用于连接两个字符串，返回一个新字符串，不改变原字符串。</p>
+<ul>
+<li>该方法在多个参数先将参数转成字符串再连接。</li>
+<li>和+不同的是当两个运算数都是数值时，不会转换类型，所以会有不同</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">3</span>;</div><div class="line"><span class="keyword">var</span> c =<span class="string">"4"</span>;</div><div class="line"><span class="string">''</span>.concat(a,b,c) <span class="comment">// 134</span></div><div class="line">a+b+c <span class="comment">// 44</span></div></pre></td></tr></table></figure>
+<h3 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice 方法"></a>slice 方法</h3><p>用于从原字符串取出子字符串并返回，不改变原字符串。</p>
+<ul>
+<li>第一个参数是开始位置</li>
+<li>第二个参数是结束位置，结果不包含这个位置</li>
+<li>如果参数是负值 或第一个参数大于第二个参数，处理方法同数组的slice方法</li>
+</ul>
+<h3 id="substring-方法"><a href="#substring-方法" class="headerlink" title="substring 方法"></a>substring 方法</h3><p>作用同slice，但是以下几点不同</p>
+<ul>
+<li>如果第一个参数大于第二个参数，会自动更换位置</li>
+<li>如果参数是负数，会自动将负数转为0</li>
+</ul>
+<h3 id="substr-方法"><a href="#substr-方法" class="headerlink" title="substr 方法"></a>substr 方法</h3><p>作用同slice</p>
+<ul>
+<li>第一个参数是开始位置</li>
+<li>第二个参数是要截取的长度</li>
+</ul>
+<blockquote>
+<ul>
+<li>如果省略第二个参数则截取到原字符串的结束</li>
+<li>如果第一个参数是负数，表示倒数</li>
+<li>如果第二个参数是负数，将自动转为0，返回空字符串</li>
+</ul>
+</blockquote>
+<h3 id="indexOf，lastIndexOf方法"><a href="#indexOf，lastIndexOf方法" class="headerlink" title="indexOf，lastIndexOf方法"></a>indexOf，lastIndexOf方法</h3><p>用于查找一个字符串在另一个字符串中的位置，如果没有找到返回-1，indexOf是从头查找，lastIndexOf从尾部开始匹配。</p>
+<ul>
+<li>如果有第二个参数表示匹配的开始位置</li>
+</ul>
+<h3 id="trim方法"><a href="#trim方法" class="headerlink" title="trim方法"></a>trim方法</h3><p>用于消除字符串两端的<code>空格</code> <code>制表符</code> <code>换行符</code> <code>回车符</code> </p>
+<p>无参数，返回的是一个新字符串，不改变原字符串的值。</p>
+<h3 id="toLowerCase，toUpperCase方法"><a href="#toLowerCase，toUpperCase方法" class="headerlink" title="toLowerCase，toUpperCase方法"></a>toLowerCase，toUpperCase方法</h3><p>用于转换大小写</p>
+<ul>
+<li>不改变原字符串</li>
+<li>可以通过call调用转换布尔值 或数组</li>
+</ul>
+<h3 id="localeCompare-方法"><a href="#localeCompare-方法" class="headerlink" title="localeCompare 方法"></a>localeCompare 方法</h3><p>用于比转两个字符串</p>
+<ul>
+<li>如果小于0，表示第一个字符串小于第二个字符串</li>
+<li>如果等于0，表示两者相等</li>
+<li>如果大于0，表示第一个字符串大于第二个字符串</li>
+</ul>
+<p>没有什么太大作用</p>
+<h3 id="match-方法"><a href="#match-方法" class="headerlink" title="match 方法"></a>match 方法</h3><p>用于匹配某个字符串，返回一个数组，成员为第一个字符串，如果没有找到匹配，则返回null</p>
+<ul>
+<li>返回的数组还有index属性和input属性</li>
+<li>index属性表示匹配字符串开始的位置</li>
+<li>input表示原始字符串</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> matches = <span class="string">'cat, bat, sat, fat'</span>.match(<span class="string">'at'</span>);</div><div class="line">matches.index <span class="comment">// 1</span></div><div class="line">matches.input <span class="comment">// "cat, bat, sat, fat"</span></div></pre></td></tr></table></figure>
+<h3 id="search-方法"><a href="#search-方法" class="headerlink" title="search 方法"></a>search 方法</h3><p>用法等同于match但是返回值是匹配的第一个位置，如果没找到返回-1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'cat, bat, sat, fat'</span>.search(<span class="string">'fa'</span>) <span class="comment">// 15</span></div></pre></td></tr></table></figure>
+<h3 id="replace-方法"><a href="#replace-方法" class="headerlink" title="replace 方法"></a>replace 方法</h3><p>用于替换匹配的子字符串</p>
+<p>第一个参数：旧字符串</p>
+<p>第二个参数：新字符串</p>
+<p>返回值是改变后的字符串，会改变原字符串</p>
+<h3 id="split-方法"><a href="#split-方法" class="headerlink" title="split 方法"></a>split 方法</h3><p>按照规则分割字符串，返回一个由分割出来的子字符串组成的数组。</p>
+<blockquote>
+<ul>
+<li>参数是空字符串，则返回成员是原字符串的每一个字符</li>
+<li>如果没有参数，则返回数组的唯一成员就是原字符串</li>
+<li>如果满足分割的两个字符紧邻着，则返回的数组中会有一个空字符串</li>
+<li>如果满足分割的字符串处于开头或结尾，则数组的第一个成员或最后一个成员是空字符串</li>
+<li>如果有第二个参数，表示限定返回数组的最大成员数</li>
+</ul>
+</blockquote>
+<p><strong>其中有<code>match</code>,<code>search</code>,<code>replace</code>,<code>split</code>可以用于正则表达式</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/原生对象/" rel="tag">#原生对象</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/06/Array对象的学习/" rel="next" title="Array对象的学习">
+                <i class="fa fa-chevron-left"></i> Array对象的学习
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/14/关于JS中的回调函数和异步的理解/" rel="prev" title="关于JS中的回调函数和异步的理解">
+                关于JS中的回调函数和异步的理解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/06/String对象的学习/"
+           data-title="String对象的学习" data-url="http://yoursite.com/2016/01/06/String对象的学习/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="Linmo" />
+          <p class="site-author-name" itemprop="name">Linmo</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/linmodev" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/linmodev" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://bonzstars.github.io/" title="Bonzstars" target="_blank">Bonzstars</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#String对象的学习"><span class="nav-number">1.</span> <span class="nav-text">String对象的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#静态方法"><span class="nav-number">1.1.</span> <span class="nav-text">静态方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fromCharCode方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">fromCharCode方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例方法"><span class="nav-number">1.2.</span> <span class="nav-text">实例方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#charAt-方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">charAt 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#charCodeAt-方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">charCodeAt 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat-方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">concat 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slice-方法"><span class="nav-number">1.2.4.</span> <span class="nav-text">slice 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#substring-方法"><span class="nav-number">1.2.5.</span> <span class="nav-text">substring 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#substr-方法"><span class="nav-number">1.2.6.</span> <span class="nav-text">substr 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf，lastIndexOf方法"><span class="nav-number">1.2.7.</span> <span class="nav-text">indexOf，lastIndexOf方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trim方法"><span class="nav-number">1.2.8.</span> <span class="nav-text">trim方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toLowerCase，toUpperCase方法"><span class="nav-number">1.2.9.</span> <span class="nav-text">toLowerCase，toUpperCase方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localeCompare-方法"><span class="nav-number">1.2.10.</span> <span class="nav-text">localeCompare 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#match-方法"><span class="nav-number">1.2.11.</span> <span class="nav-text">match 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#search-方法"><span class="nav-number">1.2.12.</span> <span class="nav-text">search 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replace-方法"><span class="nav-number">1.2.13.</span> <span class="nav-text">replace 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split-方法"><span class="nav-number">1.2.14.</span> <span class="nav-text">split 方法</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Linmo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"linmodev"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
