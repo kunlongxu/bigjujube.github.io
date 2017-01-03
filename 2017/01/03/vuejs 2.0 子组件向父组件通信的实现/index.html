@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linmodev, linmo" />
+  <meta name="keywords" content="vuejs2.0," />
 
 
 
@@ -96,12 +96,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Linmo Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2016/page/2/index.html">
+<meta name="description" content="vuejs 2.0 子组件向父组件通信的实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuejs 2.0 子组件向父组件通信的实现">
+<meta property="og:url" content="http://yoursite.com/2017/01/03/vuejs 2.0 子组件向父组件通信的实现/index.html">
 <meta property="og:site_name" content="Linmo Blog">
+<meta property="og:description" content="vuejs 2.0 子组件向父组件通信的实现">
+<meta property="og:updated_time" content="2017-01-03T14:02:39.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linmo Blog">
+<meta name="twitter:title" content="vuejs 2.0 子组件向父组件通信的实现">
+<meta name="twitter:description" content="vuejs 2.0 子组件向父组件通信的实现">
 
 
 
@@ -122,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2016/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/03/vuejs 2.0 子组件向父组件通信的实现/"/>
 
-  <title> 归档 | Linmo Blog </title>
+  <title> vuejs 2.0 子组件向父组件通信的实现 | Linmo Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -145,7 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,107 +247,169 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 13 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/01/06/String对象的学习/" itemprop="url">
-              
-                <span itemprop="name">String对象的学习</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-01-06T16:38:23+08:00"
-              content="2016-01-06" >
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/01/06/Array对象的学习/" itemprop="url">
-              
-                <span itemprop="name">Array对象的学习</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-01-06T14:38:23+08:00"
-              content="2016-01-06" >
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2016/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2016/">1</a><span class="page-number current">2</span>
-  </nav>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                vuejs 2.0 子组件向父组件通信的实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-03T18:32:23+08:00" content="2017-01-03">
+              2017-01-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/vuejs/" itemprop="url" rel="index">
+                    <span itemprop="name">vuejs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/03/vuejs 2.0 子组件向父组件通信的实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/03/vuejs 2.0 子组件向父组件通信的实现/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="vuejs-2-0-子组件向父组件通信的实现"><a href="#vuejs-2-0-子组件向父组件通信的实现" class="headerlink" title="vuejs 2.0 子组件向父组件通信的实现"></a>vuejs 2.0 子组件向父组件通信的实现</h1><p>最近几天使用vuejs在做项目，但是官网对子组件向父组件传递信息说的并不是很容易理解，而且我按照官方文档的办法去操作，也并没有实现，但我经过对官方文档的查阅用以下方法实现了</p>
+<p>这里父组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 官方文档里说，要在父组件的created构子里对子组件自定义事件进行监听</span></div><div class="line">created()&#123;</div><div class="line"> <span class="keyword">this</span>.$on(<span class="string">'child-event'</span>,(el)=&gt;&#123;</div><div class="line">   <span class="built_in">console</span>.log(el);</div><div class="line"> &#125;) </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里是子组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在子组件定义的方法里时行触发</span></div><div class="line">methods:&#123;</div><div class="line">  <span class="comment">// 比如addStyle方法</span></div><div class="line">  addStyle()&#123;</div><div class="line">    <span class="keyword">this</span>.$parent.$emit(<span class="string">'child-event'</span>,<span class="string">'我是子组件传递过来的元素'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ok了，以上就是子组件向父组件传递信息的方法。</p>
+<p>下面讲一下原理：</p>
+<blockquote>
+<p>官方文档里说：每一个vue组件都是一个vue实例，而每一个实例，都有各自的作用域。<br>那么也就是说第一个实例的上下文都是独立的，而当我们在子组件里直接<code>this.$emit()</code>的时候访问的是子组件的一个_event。这一点可以通过vue-devtools或者在控制台查看。所以直接使用是访问不到父组件的vue实例的，但是vue提供了一个$parent属性，它指向父组件，所以我们就可以通过这个属性去访问父组件的vue实例</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vuejs2-0/" rel="tag">#vuejs2.0</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/06/05-Javascript中的document/" rel="next" title="Javascript中的document">
+                <i class="fa fa-chevron-left"></i> Javascript中的document
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -351,6 +417,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/03/vuejs 2.0 子组件向父组件通信的实现/"
+           data-title="vuejs 2.0 子组件向父组件通信的实现" data-url="http://yoursite.com/2017/01/03/vuejs 2.0 子组件向父组件通信的实现/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -370,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpeg"
@@ -455,6 +538,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vuejs-2-0-子组件向父组件通信的实现"><span class="nav-number">1.</span> <span class="nav-text">vuejs 2.0 子组件向父组件通信的实现</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -558,11 +652,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
